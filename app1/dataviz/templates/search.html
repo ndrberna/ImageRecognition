@@ -1,0 +1,458 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Dimostratore</title>
+
+	<!-- Global stylesheets -->
+
+	
+	<link href="{% static "css/css.css"%}" rel="stylesheet" type="text/css">
+	<link href="{% static "css/styles.css"%}" rel="stylesheet" type="text/css">
+	<link href="{% static "css/bootstrap.css"%}" rel="stylesheet" type="text/css">
+	<link href="{% static "css/core.css"%}" rel="stylesheet" type="text/css">
+	<link href="{% static "css/components.css"%}" rel="stylesheet" type="text/css">
+	<link href="{% static "css/colors.css"%}" rel="stylesheet" type="text/css">
+	<link href="{% static "css/components_2.css"%}" rel="stylesheet" type="text/css">
+	
+	
+    
+	<!-- Core JS files -->
+
+	<script type="text/javascript" src="{% static "js/pace.js"%}"></script>
+	<script type="text/javascript" src="{% static "js/jquery.js"%}"></script>
+	<script type="text/javascript" src="{% static "js/bootstrap.js"%}"></script>
+	<script type="text/javascript" src="{% static "js/blockui.js"%}"></script>
+
+	<script type="text/javascript" src="{% static "js/datatables.min.js"%}"></script>
+	<script type="text/javascript" src="{% static "js/datatables_advanced.js"%}"></script>
+	<script type="text/javascript" src="{% static "js/select2.js"%}"></script>
+
+	<script type="text/javascript" src="{% static "js/tokenfield.js"%}"></script>
+	<!-- /core JS files -->
+
+	<!-- Theme JS files -->
+
+	<script type="text/javascript" src="{% static "js/d3.js"%}"></script>
+	<script type="text/javascript" src="{% static "js/d3_tooltip.js"%}"></script>
+	<script type="text/javascript" src="{% static "js/switchery.js"%}"></script>
+	<script type="text/javascript" src="{% static "js/uniform.js"%}"></script>
+	<script type="text/javascript" src="{% static "js/bootstrap_multiselect.js"%}"></script>
+	<!-- <script type="text/javascript" src="js/moment.js"></script>
+	<script type="text/javascript" src="js/daterangepicker.js"></script> -->
+
+	<script type="text/javascript" src="{% static "js/app.js"%}"></script>
+	<!-- <script type="text/javascript" src="js/dashboard.js"></script>-->
+	<script type="text/javascript" src="{% static "js/layout_fixed_native.js"%}"></script>
+	<!-- /theme JS files -->
+
+<script>try {  for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){    var lastpass_f = document.forms[lastpass_iter];    if(typeof(lastpass_f.lpsubmitorig)=="undefined"){      if (typeof(lastpass_f.submit) == "function") {        lastpass_f.lpsubmitorig = lastpass_f.submit;        lastpass_f.submit = function(){          var form = this;          try {            if (document.documentElement && 'createEvent' in document)            {              var forms = document.getElementsByTagName('form');              for (var i=0 ; i<forms.length ; ++i)                if (forms[i]==form)                {                  var element = document.createElement('lpformsubmitdataelement');                  element.setAttribute('formnum',i);                  element.setAttribute('from','submithook');                  document.documentElement.appendChild(element);                  var evt = document.createEvent('Events');                  evt.initEvent('lpformsubmit',true,false);                  element.dispatchEvent(evt);                  break;                }            }          } catch (e) {}          try {            form.lpsubmitorig();          } catch (e) {}        }      }    }  }} catch (e) {}</script></head>
+
+<body class="navbar-top  pace-done"><div class="pace  pace-inactive"><div data-progress="99" data-progress-text="100%" style="transform: translate3d(100%, 0px, 0px);" class="pace-progress">
+  <div class="pace-progress-inner"></div>
+</div>
+<div class="pace-activity"></div></div>
+
+	<!-- Main navbar -->
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="/"><span style="font-size:20px">Reti neurali per image recognition<span></a>
+
+			<ul class="nav navbar-nav visible-xs-block">
+				<li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
+				<li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
+			</ul>
+		</div>
+
+		<div class="navbar-collapse collapse" id="navbar-mobile">
+			<ul class="nav navbar-nav">
+				<li><a class="sidebar-control sidebar-main-toggle hidden-xs"><i class="icon-paragraph-justify3"></i></a></li>
+
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<i class="icon-git-compare"></i>
+						<span class="visible-xs-inline-block position-right">Git updates</span>
+						<span class="badge bg-warning-400"></span>
+					</a>
+					
+				</li>
+			</ul>
+
+			<p class="navbar-text"><span class="label bg-success-400"></span></p>
+
+			<ul class="nav navbar-nav navbar-right">
+			
+
+				<li class="dropdown dropdown-user">
+					<a class="dropdown-toggle" data-toggle="dropdown">
+						
+						<span>Utente </span>
+						<i class="caret"></i>
+					</a>
+
+					<ul class="dropdown-menu dropdown-menu-right">
+						<li><a href="#"><i class="icon-user-plus"></i> My profile</a></li>
+						
+						<li><a href="#"> <i class="icon-comment-discussion"></i> Messages</a></li>
+						<li class="divider"></li>
+						<li><a href="#"><i class="icon-cog5"></i> Account settings</a></li>
+						<li><a href="#"><i class="icon-switch2"></i> Logout</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- /main navbar -->
+
+
+	<!-- Page container -->
+	<div style="min-height:1094px" class="page-container">
+
+		<!-- Page content -->
+		<div class="page-content">
+
+			<!-- Main sidebar -->
+			<div class="sidebar sidebar-main sidebar-fixed affix-top">
+				<div class="sidebar-content">
+
+					<!-- User menu -->
+					<div class="sidebar-user">
+						
+					</div>
+					<!-- /user menu -->
+
+
+					<!-- Main navigation -->
+					<div class="sidebar-category sidebar-category-visible">
+						<div class="category-content no-padding">
+							<ul class="navigation navigation-main navigation-accordion">
+
+								<!-- Main -->
+								<li class="navigation-header"><i data-original-title="Main pages" class="icon-menu" title=""></i></li>
+								
+					
+
+						
+
+							</ul>
+						</div>
+					</div>
+					<!-- /main navigation -->
+
+				</div>
+			</div>
+			<!-- /main sidebar -->
+
+
+			<!-- Main content -->
+			<div class="content-wrapper">
+
+
+
+
+				<!-- Page header -->
+				<div class="page-header">
+					<div class="page-header-content">
+						<div class="page-title">
+						<!-- 
+							<h4><i class="icon-arrow-left52 position-left"></i> <a href="/" class="text-semibold">Home</a></h4>-->
+						</div>
+
+						<div class="heading-elements">
+							<div class="heading-btn-group">
+								
+							</div>
+						</div>
+					
+
+
+					{% block breadcrumbs %}
+
+  				    {% endblock %}
+				
+				</div>
+				<!-- /page header -->
+
+
+				<!-- Main content -->
+			<div >
+
+				<!-- Page header -->
+				<div class="page-header">
+					<div class="page-header-content">
+					
+				
+					<a class="heading-elements-toggle"><i class="icon-menu"></i></a></div>
+
+					
+				</div>
+				<!-- /page header -->
+
+
+				<!-- Content area -->
+				<div class="content">
+					<div class="panel panel-flat">
+						<div class="panel-heading">
+							<h2 class="font-green-sharp bold uppercase  panel-title">CIFAR-10 (4 categories)</h2>
+							<a href="https://www.google.com/search?q=birds&biw=1748&bih=1004&tbm=isch&source=lnt&tbs=isz:ex,iszw:600,iszh:600#imgrc=zU-WH6Sq9H0KhM:" target=_blank> bird images</a> - 
+							<a href="https://www.google.com/search?q=birds&biw=1748&bih=1004&tbm=isch&source=lnt&tbs=isz:ex,iszw:600,iszh:600#tbs=isz:ex,iszw:600,iszh:600&tbm=isch&q=dogs" target=_blank> dogs images</a> - 
+
+							<a href="https://www.google.com/search?q=birds&biw=1748&bih=1004&tbm=isch&source=lnt&tbs=isz:ex,iszw:600,iszh:600#tbs=isz:ex,iszw:600,iszh:600&tbm=isch&q=cats" target=_blank> cats images</a> - 
+							
+							<a href="https://www.google.com/search?q=birds&biw=1748&bih=1004&tbm=isch&source=lnt&tbs=isz:ex,iszw:600,iszh:600#tbs=isz:ex,iszw:600,iszh:600&tbm=isch&q=car" target=_blank> car images</a>
+						<a class="heading-elements-toggle"><i class="icon-menu"></i></a></div>
+
+						<div class="panel-body">
+						<!-- Dashboard content -->
+					 <!--<form action="/cerca/?url=" method="get"> -->
+					 <form action="/demo1/?url=" method="get">
+					 {% csrf_token %}
+				    
+				    <input id="url" type="text" name="url" value="">
+				    <input type="submit" value="CERCA">
+					</form>
+					<br/>
+					<p>Addestramento su 60000 32x32 colour images.
+					Ricerca tra 4 delle 10 categorie disponibili.
+					<small>Le immagini devono avere un formato quadrato n*n pixel.</small></p>
+							
+											
+						
+						
+						<h4>Esempi: </h4>
+						<b>DOG</b>
+						<ul>
+						
+						<li>http://cdn1-www.dogtime.com/assets/uploads/2011/01/file_23004_afghan-hound-460x290.jpg</li>
+						</ul>
+
+						<b>CAR</b>
+						<ul>
+						<li>http://i.i.cbsi.com/cnwk.1d/i/tim//2010/01/13/fmimg3425294675297723623_32x32.jpg</li>
+
+						
+						<li>https://yt3.ggpht.com/-9AGYfR2qKfc/AAAAAAAAAAI/AAAAAAAAAAA/EBzPaAxXFDc/s32-c-k-no-mo-rj-c0xffffff/photo.jpg</li>
+						</ul>
+
+						<b>CAT</b>
+						<ul>
+						
+						<li>https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/07/07e20860e1d3e51dacf2e0c1cd1a7bd61a620186.jpg</li>
+						</ul>	
+
+						<b>BIRD</b>
+						<ul>
+						
+						<li>http://app.rockjumperbirding.com/sites/rockjumper/attachments/1/Tour-SA-Eastern-2016_7.jpg
+						</li>
+
+						</ul>
+				
+						</div>
+
+					</div>
+				
+					<div class="panel panel-flat">
+						<div class="panel-heading">
+							<h2 class="font-green-sharp bold uppercase  panel-title">CAT & DOGS</h2>
+
+							<a href="https://www.google.com/search?q=birds&biw=1748&bih=1004&tbm=isch&source=lnt&tbs=isz:ex,iszw:600,iszh:600#tbs=isz:ex,iszw:600,iszh:600&tbm=isch&q=dogs" target=_blank> dogs images</a> - 
+
+							<a href="https://www.google.com/search?q=birds&biw=1748&bih=1004&tbm=isch&source=lnt&tbs=isz:ex,iszw:600,iszh:600#tbs=isz:ex,iszw:600,iszh:600&tbm=isch&q=cats" target=_blank> cats images</a> </div>
+							
+
+
+
+							
+
+						<div class="panel-body">
+						<!-- Dashboard content -->
+					 <!--<form action="/cerca/?url=" method="get"> -->
+					 <form action="/cat_dog/?url=" method="get">
+					 {% csrf_token %}
+				    
+				    <input id="url" type="text" name="url" value="">
+				    <input type="submit" value="CERCA">
+
+					</form>
+
+					Addestramento su dataset di 25000 immagini (<a target=_blank href="https://www.kaggle.com/c/dogs-vs-cats/data">fonte</a>)
+							<h4>Esempi: </h4>
+
+						<b>DOG</b>
+						<ul>
+						
+						<li>https://s-media-cache-ak0.pinimg.com/736x/a5/cf/2d/a5cf2d384844e28648e7569e321d99ed.jpg</li>
+
+						<li>https://www.rover.com/blog/wp-content/uploads/2014/08/labrador-retriever-smartest-dog-breeds.jpg
+						</li>
+
+						</ul>	
+						<a class="heading-elements-toggle"><i class="icon-menu"></i></a></div>
+						</div>
+
+					
+						<div class="panel panel-flat">
+						<div class="panel-heading">
+							<h2 class="font-green-sharp bold uppercase  panel-title">FOOD</h2>
+							
+						<a class="heading-elements-toggle"><i class="icon-menu"></i></a></div>
+
+						<div class="panel-body">
+					
+							
+					 <form action="/food/?url=" method="get">
+					 {% csrf_token %}
+				    
+				    <input id="url" type="text" name="url" value="">
+				    <input type="submit" value="CERCA">
+
+					</form>
+					<a target=_blank href="https://www.vision.ee.ethz.ch/datasets_extra/food-101/">Database</a> contenente 101 food categories, with 101'000 images
+							<h4>Esempi: </h4>
+
+						<b>Fritti</b>
+							<ul>
+						
+						<li>http://i2.cdn.cnn.com/cnnnext/dam/assets/150521165141-02-microbiome-foods-restricted-super-169.jpg</li>
+						<li>http://assets.epicurious.com/photos/57aa24b3de966cd27ad74905/2:1/w_1260%2Ch_630/pork-dumplings.jpg</li>
+
+						<li>https://www.greenme.it/immagini/mangiare/veg/gnocchi_di_patate/gnocchi_di_patate_10.jpg</li>
+
+
+						
+
+						</ul>	
+					
+
+						</div>
+
+					</div>
+
+
+
+
+					<div class="panel panel-flat">
+						<div class="panel-heading">
+							<h2 class="font-green-sharp bold uppercase  panel-title">FASHION</h2>
+							<a target=_blank href="ttp://people.ee.ethz.ch/~lbossard/projects/accv12/index.html">Database</a> contenente 14 food categories, with 80000 images
+
+h
+
+							'blouses','cloak','coat','jacket','long dress','polo shirt, sport shirt','robe','shirt','short dress','suit, suit of clothes','sweater','jersey, T-shirt, tee shirt','undergarment, upper body','uniform','vest, waistcoat',
+							
+						<a class="heading-elements-toggle"><i class="icon-menu"></i></a></div>
+
+						<div class="panel-body">
+						
+					 <form action="/fashion/?url=" method="get">
+					 {% csrf_token %}
+				    
+				    <input id="url" type="text" name="url" value="">
+				    <input type="submit" value="CERCA">
+
+					</form>
+					
+
+
+
+						
+
+						</ul>	
+					
+
+						</div>
+
+					</div
+
+
+
+
+
+					<!--  -->
+					<div class="panel panel-flat">
+						<div class="panel-heading">
+							<h2 class="font-green-sharp bold uppercase  panel-title">TV BRANDS</h2>
+							
+						<a class="heading-elements-toggle"><i class="icon-menu"></i></a></div>
+
+						<div class="panel-body">
+					
+
+					 <form action="/brand/?url=" method="get">
+					 {% csrf_token %}
+				    
+				    <input id="url" type="text" name="url" value="">
+				    <input type="submit" value="CERCA">
+
+					</form>
+				<a href="https://www.google.com/search?q=tv+program&biw=1780&bih=1087&tbm=isch&source=lnt&tbs=isz:ex,iszw:1280,iszh:720#tbs=isz:ex,iszw:1280,iszh:720&tbm=isch&q=tv+program+bbc" target=_blank> tv frames</a> 
+
+
+
+							Database da 600 immagini (1280*720)
+							<h4>Esempi: </h4>
+
+						<b>BBC</b>
+							<ul>
+						
+						<li>http://www.mm-eu.tv/wordpress/wp-content/uploads/2015/09/bbc-world-news_thumb36.jpg</li>
+
+						
+
+						</ul>	
+
+
+						</div>
+
+					</div>
+
+
+
+
+
+						
+
+
+
+					</div>
+
+
+
+
+					</div>
+					</div>
+
+
+
+					<!-- Footer -->
+					
+					<!-- /footer -->
+
+				</div>
+				<!-- /content area -->
+
+			</div>
+			<!-- /main content -->
+
+			</div>
+			<!-- /main content -->
+
+		</div>
+		<!-- /page content -->
+
+	</div>
+	<!-- /page container -->
+
+
+</body>
+			{% block script %}
+
+  			{% endblock %}
+</html>
+
+

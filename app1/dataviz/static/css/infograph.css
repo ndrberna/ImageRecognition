@@ -1,0 +1,93 @@
+body {
+  background: #161616;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: black;
+}
+
+.content {
+  width: 920px;
+  margin: 20px auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 600;
+  font-size: 3em;
+  text-transform: uppercase;
+  margin-bottom: 0.2em;
+}
+
+.subtitle {
+  font-weight: 300;
+  font-size: 1.5em;
+}
+
+.graph {
+  display: block;
+  margin-top: 20px;
+}
+.graph__bar {
+  fill: #bc3636;
+}
+.graph__axis text {
+  fill: black;
+}
+.graph__axis--x {
+  opacity: 0.5;
+}
+.graph__axis--x line {
+  stroke: #fff;
+  stroke-opacity: 0.2;
+}
+.graph__axis--x .domain {
+  fill: none;
+  stroke: none;
+  shape-rendering: crispEdges;
+}
+.graph__axis--y text {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.graph__axis--y path, .graph__axis--y line {
+  fill: none;
+  stroke: none;
+}
+.graph__tooltip {
+  padding: 0.5em;
+  background: #444;
+}
+.graph__tooltip:before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  margin-top: -6px;
+  border: 6px solid transparent;
+  border-right-color: #444;
+}
+.graph__units-select {
+  padding: 0  0.8em 0 0.5em;
+  margin-top: 1em;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 5.9999998"><path d="M10 0H0l5 6z" fill="white"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+.graph__units-select option {
+  background: black;
+}
